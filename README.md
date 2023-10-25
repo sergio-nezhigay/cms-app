@@ -92,5 +92,3 @@ For more information or assistance, please refer to the Backendless team. 📧
 - **Author:** [Serhii Nezhyhai](https://github.com/sergio-nezhigay) 📝
 - **Email:** [abc1971h@gmail.com](mailto:abc1971h@gmail.com) ✉️
 - **My portfolio:** [🌐 Website](https://serhii.vercel.app/)
-
-Happy coding! 🎉
