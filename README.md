@@ -1,4 +1,6 @@
-# Simple CMS Application with React, React Router, and Webpack
+# 🚀 Simple CMS Application
+
+![Simple CMS Application](/public/screenshot.jpg)
 
 This repository contains a client-side application that works as a basic Content Management System (CMS) using React, React Router, and Webpack. The app loads tabs from a JSON file and renders their content. 🚀
 
@@ -62,26 +64,12 @@ const DummyTable = () => (
 export default DummyTable;
 ```
 
-## Requirements 📝
+## Specs 📝
 
 - When switching between tabs, the current tab's `id` is added to the URL of the app. For example, 'localhost/dummyTable' or 'localhost/dummyChart'.
 - The first tab is opened by default.
 - If the app's URL already contains a tab `id` when loaded, that tab is opened by default.
 - Implemented lazy loading for tab content files. The file for the tab's content (identified with the "path" property) is loaded only when it is needed.
-
-## Getting Started 🚀
-
-To get started with this application, follow these steps:
-
-1. Clone this repository to your local machine.
-
-2. Implement the required functionality using React, React Router, and Webpack.
-
-3. Ensure that the app meets all the specified requirements.
-
-4. Commit and push your project to GitHub.
-
-5. Deploy your project to GitHub Pages and make sure it is accessible.
 
 ## Additional Information ℹ️
 
@@ -98,5 +86,11 @@ To get started with this application, follow these steps:
 For more information or assistance, please refer to the Backendless team. 📧
 
 **Note:** Please make sure to keep the project clean and well-organized. Consider adding any necessary documentation, comments, or instructions for running the application.
+
+## Contact Information
+
+- **Author:** [Serhii Nezhyhai](https://github.com/sergio-nezhigay) 📝
+- **Email:** [abc1971h@gmail.com](mailto:abc1971h@gmail.com) ✉️
+- **My portfolio:** [🌐 Website](https://serhii.vercel.app/)
 
 Happy coding! 🎉
