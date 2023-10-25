@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes, Link } from "react-router-dom";
+import TabContent from "./components/TabContent";
+
+import tabs from "./data/tabs.json";
+
+const sortedTabs = tabs.sort((a, b) => a.order - b.order);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul>
+        {sortedTabs.map(({ id, title }) => (
+          <Link key={id} to={id}>
+            {title}
+          </Link>
+        ))}
+      </ul>
+
+      <hr />
+
+      <Routes>
+        <Route index element={<TabContent path={sortedTabs[0].path} />} />
+        {sortedTabs.map(({ id, path, title }) => (
+          <Route
+            key={id}
+            path={id}
+            element={<TabContent path={path} title={title} />}
+          />
+        ))}
+      </Routes>
     </div>
   );
 }
