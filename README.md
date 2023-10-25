@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Simple CMS Application with React, React Router, and Webpack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a client-side application that works as a basic Content Management System (CMS) using React, React Router, and Webpack. The app loads tabs from a JSON file and renders their content. 🚀
 
-## Available Scripts
+## App Functionality 📋
 
-In the project directory, you can run:
+- When the app starts, it downloads a JSON file from a predefined path. This JSON file contains tab descriptions to be rendered within the app.
+- A tab's description includes:
+  - `id`: A unique identifier for the tab.
+  - `title`: The title of the tab.
+  - `order`: The sequence order of the tab among others.
+  - `path`: The path to a JS file containing a React component to be rendered as the tab's content.
 
-### `npm start`
+Example JSON file (`tabs.json`):
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```json
+[
+  {
+    "id": "dummyTable",
+    "title": "Dummy Table",
+    "order": 1,
+    "path": "tabs/dummyTable.js"
+  },
+  {
+    "id": "dummyChart",
+    "title": "Dummy Chart",
+    "order": 2,
+    "path": "tabs/dummyChart.js"
+  },
+  {
+    "id": "dummyList",
+    "title": "Dummy List",
+    "order": 0,
+    "path": "tabs/dummyList.js"
+  }
+]
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Example tab content file (`dummyTable.js`):
 
-### `npm test`
+```jsx
+import React from "react";
+import Table from "react-bootstrap/Table";
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const DummyTable = () => (
+  <Table striped bordered hover>
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+      </tr>
+    </tbody>
+  </Table>
+);
 
-### `npm run build`
+export default DummyTable;
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requirements 📝
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- When switching between tabs, the current tab's `id` is added to the URL of the app. For example, 'localhost/dummyTable' or 'localhost/dummyChart'.
+- The first tab is opened by default.
+- If the app's URL already contains a tab `id` when loaded, that tab is opened by default.
+- Implemented lazy loading for tab content files. The file for the tab's content (identified with the "path" property) is loaded only when it is needed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started 🚀
 
-### `npm run eject`
+To get started with this application, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone this repository to your local machine.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Implement the required functionality using React, React Router, and Webpack.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Ensure that the app meets all the specified requirements.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Commit and push your project to GitHub.
 
-## Learn More
+5. Deploy your project to GitHub Pages and make sure it is accessible.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Additional Information ℹ️
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Used Libraries**:
 
-### Code Splitting
+- "bootstrap": 📦
+- "chart.js": 📈
+- "react": ⚛️
+- "react-dom": ⚛️
+- "react-bootstrap": 🔳
+- "react-chartjs-2": 📊
+- "react-router-dom": "🛣️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For more information or assistance, please refer to the Backendless team. 📧
 
-### Analyzing the Bundle Size
+**Note:** Please make sure to keep the project clean and well-organized. Consider adding any necessary documentation, comments, or instructions for running the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy coding! 🎉

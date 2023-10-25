@@ -1,36 +1,24 @@
 import React from "react";
-import { Route, Routes, Link } from "react-router-dom";
-import TabContent from "./components/TabContent";
+
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
 
 import tabs from "./data/tabs.json";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const sortedTabs = tabs.sort((a, b) => a.order - b.order);
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <ul>
-        {sortedTabs.map(({ id, title }) => (
-          <Link key={id} to={id}>
-            {title}
-          </Link>
-        ))}
-      </ul>
-
-      <hr />
-
-      <Routes>
-        <Route index element={<TabContent path={sortedTabs[0].path} />} />
-        {sortedTabs.map(({ id, path, title }) => (
-          <Route
-            key={id}
-            path={id}
-            element={<TabContent path={path} title={title} />}
-          />
-        ))}
-      </Routes>
-    </div>
+    <>
+      <header>
+        <Header tabs={sortedTabs} />
+      </header>
+      <main>
+        <MainContent tabs={sortedTabs} />
+      </main>
+    </>
   );
-}
+};
 
 export default App;
